@@ -6,3 +6,4 @@ webdriver-manager==4.0.1 # webdriver-manager for automatic browser driver manage
 python-dotenv==1.0.1 # python-dotenv for environment variable management
 requests==2.31.0 # requests library for API calls if needed in hybrid tests
 pytest-html
+
