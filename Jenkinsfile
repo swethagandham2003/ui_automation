@@ -5,7 +5,7 @@ pipeline {
 
         stage('Checkout') {
             steps {
-                git 'https://github.com/swethagandham2003/ui_automation.git'
+                git url: 'https://github.com/swethagandham2003/ui_automation.git', branch: 'main'
             }
         }
 
@@ -20,7 +20,13 @@ pipeline {
 
         stage('Run tests') {
             steps {
-                sh 'pytest'
+                sh 'pytest tests/ --junitxml=report.xml'
+            }
+        }
+
+        stage('Archive reports') {
+            steps {
+                junit 'report.xml'
             }
         }
     }
